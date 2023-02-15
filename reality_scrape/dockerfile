@@ -1,0 +1,22 @@
+FROM python:3.8-slim-buster
+
+WORKDIR /srealityscraper
+
+COPY requirements.txt .
+
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    python3-dev \
+    curl \
+    wget \
+    && pip install --upgrade pip \
+    && pip install -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["python", "app.py"]
