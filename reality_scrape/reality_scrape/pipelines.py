@@ -25,7 +25,7 @@ class RealityScrapePipeline(object):
         hostname = 'localhost'
         port = '5432'
         username = 'postgres'
-        password = 'SrealityScrape'
+        password = 'RealityScrape'
         database = 'reality1'
 
         # Connect to database
